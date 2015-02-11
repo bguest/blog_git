@@ -1,0 +1,48 @@
+doctype html
+html lang='en' 
+  head
+    meta charset="utf-8" /
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
+    meta content="(A layout example with a side menu that hides on mobile), just like the Pure website." name="description" /
+    title= @title 
+    link href="http://yui.yahooapis.com/pure/0.6.0-rc-1/pure-min.css" rel="stylesheet" /
+    link href="css/side-menu.css" rel="stylesheet" /
+  body
+    #layout
+      a#menuLink.menu-link href="#menu" 
+        span
+      #menu
+        .pure-menu
+          a.pure-menu-heading href="#"  Company
+          ul.pure-menu-list
+            li.pure-menu-item
+              a.pure-menu-link href="#"  Home
+            li.pure-menu-item
+              a.pure-menu-link href="#"  About
+            li.menu-item-divided.pure-menu-selected
+              a.pure-menu-link href="#"  Services
+            li.pure-menu-item
+              a.pure-menu-link href="#"  Contact
+      #main
+        .header
+          h1 Page Title
+          h2 A subtitle for your page goes here
+        .content
+          h2.content-subhead How to use this layout
+          p
+          h2.content-subhead Now Let's Speak Some Latin
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          .pure-g
+            .pure-u-1-4
+              img.pure-img-responsive alt=("Peyto Lake") src="http://farm3.staticflickr.com/2875/9069037713_1752f5daeb.jpg" /
+            .pure-u-1-4
+              img.pure-img-responsive alt="Train" src="http://farm3.staticflickr.com/2813/9069585985_80da8db54f.jpg" /
+            .pure-u-1-4
+              img.pure-img-responsive alt=("T-Shirt Store") src="http://farm6.staticflickr.com/5456/9121446012_c1640e42d0.jpg" /
+            .pure-u-1-4
+              img.pure-img-responsive alt="Mountain" src="http://farm8.staticflickr.com/7357/9086701425_fda3024927.jpg" /
+          h2.content-subhead Try Resizing your Browser
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    script src="javascript/ui.js" 
