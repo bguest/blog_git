@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'sinatra',    '~>1.4'
 gem 'thin',       '~>1.6'    # Server
 gem 'slim',       '~>3.0'    # Template Engine
-#gem 'github_api', '~>0.12.3' # GitHub
+gem 'faraday-http-cache', '~>1.0' # Caching
 gem 'octokit', '~>3.7' # GitHub
 
 group :development, :test do gem 'pry-byebug', '~>3.0'
@@ -11,5 +11,6 @@ group :development, :test do gem 'pry-byebug', '~>3.0'
 end
 
 group :test do
-  gem 'rspec'
+  gem 'webmock', '~>1.20'  # Stub web requests
+  gem 'rspec', '~>3.2'     # Testing Framework
 end

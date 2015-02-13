@@ -10,6 +10,8 @@ GEM
       slop (~> 3.6)
     coderay (1.1.0)
     columnize (0.9.0)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     daemons (1.1.9)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
@@ -17,6 +19,8 @@ GEM
     eventmachine (1.0.7)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    faraday-http-cache (1.0.1)
+      faraday (~> 0.8)
     method_source (0.8.2)
     multipart-post (2.0.0)
     octokit (3.7.0)
@@ -47,6 +51,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.1)
+    safe_yaml (1.0.4)
     sawyer (0.6.0)
       addressable (~> 2.3.5)
       faraday (~> 0.8, < 0.10)
@@ -64,15 +69,20 @@ GEM
       eventmachine (~> 1.0)
       rack (~> 1.0)
     tilt (1.4.1)
+    webmock (1.20.4)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  faraday-http-cache (~> 1.0)
   octokit (~> 3.7)
   pry-byebug (~> 3.0)
   pry-stack_explorer (~> 0.4.9)
-  rspec
+  rspec (~> 3.2)
   sinatra (~> 1.4)
   slim (~> 3.0)
   thin (~> 1.6)
+  webmock (~> 1.20)
