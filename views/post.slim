@@ -1,0 +1,7 @@
+.header
+  h1= @post.title
+  h2= @post.subtitle
+.content
+  h2.content-subhead= @post.date
+  == markdown @post.body
+

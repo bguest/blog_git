@@ -16,6 +16,7 @@ GEM
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
+    dotenv (1.0.2)
     eventmachine (1.0.7)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
@@ -38,6 +39,8 @@ GEM
     rack (1.6.0)
     rack-protection (1.5.3)
       rack
+    redcarpet (3.2.2)
+    rouge (1.8.0)
     rspec (3.2.0)
       rspec-core (~> 3.2.0)
       rspec-expectations (~> 3.2.0)
@@ -77,10 +80,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv (~> 1.0)
   faraday-http-cache (~> 1.0)
   octokit (~> 3.7)
   pry-byebug (~> 3.0)
   pry-stack_explorer (~> 0.4.9)
+  redcarpet (~> 3.2)
+  rouge (~> 1.8)
   rspec (~> 3.2)
   sinatra (~> 1.4)
   slim (~> 3.0)

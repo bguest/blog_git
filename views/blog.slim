@@ -1,0 +1,11 @@
+.header
+  h1=@readme.title
+  h2=@readme.subtitle
+.content
+  p= @readme.body
+
+  h3 Articles
+  ul
+    - @blog.posts.each do | post |
+      li
+        ==Presenter::Post.new(post).link
