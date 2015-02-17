@@ -7,7 +7,7 @@ describe Presenter::Post do
 
   describe '#link' do
     it 'should return link for post' do
-      expected = "<a href='/a_user/my_post.md'>my_text</a>"
+      expected = "<a href='/a_user/my_post'>my_text</a>"
       expect(presenter.link('my_text')).to eq expected
     end
   end

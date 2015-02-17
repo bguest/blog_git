@@ -1,9 +1,9 @@
 require 'sinatra'
 require 'octokit'
 require 'slim'
-require 'pry'
+require 'pry' if ENV['RACK_ENV'] == 'development'
 require 'base64'
-require './initializers'
+require './config/initializers'
 require './models'
 require './helpers'
 
@@ -11,7 +11,7 @@ set :server, %w[thin mongrel webrick]
 
 get "/" do
   @title = 'About BlogGit'
-  slim :welcome
+  slim :welcome, :layout => false
 end
 
 get "/:login" do

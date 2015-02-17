@@ -14,7 +14,7 @@ module Presenter
     end
 
     def path
-      "/#{login}/#{object.path}.md"
+      "/#{login}/#{object.path}"
     end
 
   end

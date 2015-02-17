@@ -21,7 +21,7 @@ class Blog
   end
 
   def post_names
-    collect{|p| p.name.gsub('.md', '')}
+    collect{|p| p.name.gsub(/\.(md|markdown)$/, '')}
   end
 
 end

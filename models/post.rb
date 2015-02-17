@@ -7,7 +7,7 @@ class Post
 
   def initialize(login:,  path:)
     @login = login
-    @path = path.gsub(/\.md$/,'')
+    @path = path.gsub(/\.(md|markdown)$/,'')
   end
 
   def content
