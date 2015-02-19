@@ -14,3 +14,6 @@ stack = Faraday::RackBuilder.new do |builder|
   builder.adapter Faraday.default_adapter
 end
 Octokit.middleware = stack
+
+# DISQUS
+DISQUS_SHORTNAME = ENV['RACK_ENV'] == 'production' ? 'blogithub' : 'blogithub-dev'
