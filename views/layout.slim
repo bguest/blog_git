@@ -8,19 +8,11 @@ html lang='en'
     link href="http://yui.yahooapis.com/pure/0.6.0-rc-1/pure-min.css" rel="stylesheet" /
     link href="/css/side-menu.css" rel="stylesheet" /
     link href="/css/github.css" rel="stylesheet" /
+    link href="/css/blog.css" rel="stylesheet" /
   body
     #layout
-      a#menuLink.menu-link href="#menu" 
-        span
-      #menu
-        .pure-menu
-          a.pure-menu-heading href="/#{@blog.login}"  Posts
-          
-          ul.pure-menu-list
-            -@blog.posts.each do |p|
-              -post = Presenter::Post.new(p)
-              li class=[(active_ppost?( post ) ? ['menu-item-divided', 'pure-menu-selected'] : 'pure-menu-item')].flatten
-                a.pure-menu-link href="#{post.path}" #{post.name} 
+      -if @blog
+        == slim :menu
       #main
         == yield
     script src="/javascript/ui.js" 

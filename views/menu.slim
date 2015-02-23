@@ -1,0 +1,11 @@
+a#menuLink.menu-link href="#menu"
+  span
+#menu
+  .pure-menu
+    a.pure-menu-heading href="/#{@blog.login}"  Posts
+
+    ul.pure-menu-list
+      -@blog.posts.each do |p|
+        -post = Presenter::Post.new(p)
+        li class=[(active_ppost?( post ) ? ['menu-item-divided', 'pure-menu-selected'] : 'pure-menu-item')].flatten
+          a.pure-menu-link href="#{post.path}" #{post.name}

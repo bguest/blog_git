@@ -11,7 +11,8 @@ set :server, %w[thin mongrel webrick]
 
 get "/" do
   @title = 'About BlogGit'
-  slim :welcome, :layout => false
+  @post = Post.new(login: 'bguest', repository:'blog_git', path:'README')
+  slim :post
 end
 
 get "/:login" do

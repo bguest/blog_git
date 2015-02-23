@@ -29,11 +29,34 @@ describe Post do
     end
   end
 
+  describe '#content' do
+    it 'should be able to set repo' do
+      content = double('encoded', content: Base64.encode64('some text') )
+      expect(Github).to receive(:contents).with('my_login/a_repo', :path => 'an_article.md').and_return(content)
+
+      a_post = Post.new(login:'my_login', repository:'a_repo', path:'an_article')
+      expect(a_post.content).to eq('some text')
+    end
+  end
+
+  describe '#comments?' do
+    it 'should return true if Comments: true meta exists' do
+      allow(post).to receive(:content).and_return('Comments: true')
+      expect(post.comments?).to be true
+    end
+
+    it 'should return false if Comments: false meta exists' do
+      allow(post).to receive(:content).and_return('comments: false')
+      expect(post.comments?).to be false
+    end
+  end
+
+  # MetaData
   {
-    'Title' => 'The Title', 
+    'Title' => 'The Title',
     'Author' => 'Benjamin Guest',
     'Subtitle' => 'The first of many things to come.'
-  }.each do |key, value| 
+  }.each do |key, value|
 
     key = key.downcase.to_sym
 
@@ -56,6 +79,11 @@ describe Post do
 
     it 'should return nil if no date' do
       allow(post).to receive(:content).and_return('No title here')
+      expect(post.date).to eq nil
+    end
+
+    it "should return "" if can't parse data" do
+      allow(post).to receive(:content).and_return('Date: Foobar')
       expect(post.date).to eq nil
     end
   end
