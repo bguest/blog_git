@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-ruby '2.2.0'
+ruby '2.4.1'
 gem 'sinatra',            '~>1.4'
 gem 'puma',               '~>2.11' # Server
 gem 'slim',               '~>3.0'  # Template Engine
