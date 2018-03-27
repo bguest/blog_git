@@ -9,7 +9,8 @@ gem 'redcarpet',          '~>3.2'  # Markdown parser
 gem 'rouge',              '~>1.8'  # Syntax Highlighting
 gem 'dotenv',             '~>1.0'  # Environmental Variables
 
-group :development, :test do gem 'pry-byebug', '~>3.0'
+group :development, :test do
+  gem 'pry-byebug', '~>3.0'
   gem 'pry-stack_explorer', '~> 0.4.9'
 end
 
